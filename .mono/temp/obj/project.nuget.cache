@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Jz19CosVe5sgaNj7jktXkOtkF3HyKPMVYiJsNarZ6DHy8aKgq59Ou1KItpS4QIt+4bCqgXM5qjETObkkKqCtIg==",
+  "dgSpecHash": "s1zdR7kB7pD5J2qCMMntXmsuFq6FU5vJqRPrySyM/BhFMfZVyrF+3JpEf/pfWPw6ZArZoe2VxkDICYCv22Dzkw==",
   "success": true,
   "projectFilePath": "/Users/basakdogan/godot-projects/godot3/new-project/New-project.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/basakdogan/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.3/microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "/Users/basakdogan/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.3/microsoft.netframework.referenceassemblies.net472.1.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
