@@ -1,0 +1,9 @@
+/Users/basakdogan/godot-projects/godot3/new-project/.mono/temp/bin/Debug/New-project.dll
+/Users/basakdogan/godot-projects/godot3/new-project/.mono/temp/bin/Debug/New-project.pdb
+/Users/basakdogan/godot-projects/godot3/new-project/.mono/temp/obj/Debug/New-project.csproj.AssemblyReference.cache
+/Users/basakdogan/godot-projects/godot3/new-project/.mono/temp/obj/Debug/New-project.GeneratedMSBuildEditorConfig.editorconfig
+/Users/basakdogan/godot-projects/godot3/new-project/.mono/temp/obj/Debug/New-project.AssemblyInfoInputs.cache
+/Users/basakdogan/godot-projects/godot3/new-project/.mono/temp/obj/Debug/New-project.AssemblyInfo.cs
+/Users/basakdogan/godot-projects/godot3/new-project/.mono/temp/obj/Debug/New-project.csproj.CoreCompileInputs.cache
+/Users/basakdogan/godot-projects/godot3/new-project/.mono/temp/obj/Debug/New-project.dll
+/Users/basakdogan/godot-projects/godot3/new-project/.mono/temp/obj/Debug/New-project.pdb
