@@ -30,7 +30,7 @@ animations = [ {
 radius = 71.0
 height = 58.0
 
-[node name="Mob" type="RigidBody2D"]
+[node name="Mob" type="RigidBody2D" groups=["mobs"]]
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource( 7 )
@@ -43,7 +43,6 @@ AnimatedSpritePath = NodePath("AnimatedSprite")
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "0_walk"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

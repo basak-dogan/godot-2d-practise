@@ -5,12 +5,13 @@ public class Main : Node
 {
     // Declare member variables here. 
     [Export]
-    public NodePath MobTimerPath, ScoreTimerPath, StartTimerPath, PlayerPath, StartPositionPath, MobSpawnLocationPath; 
+    public NodePath MobTimerPath, ScoreTimerPath, StartTimerPath, PlayerPath, StartPositionPath, MobSpawnLocationPath, HUDPath; 
 
     private Timer _mobTimer, _scoreTimer, _startTimer;
     private Player _player;
     private Position2D _startPosition; 
     private PathFollow2D _mobSpawnLocation;
+    private HUD _hud;
 #pragma warning disable 649
     // We assign this in the editor, so we don't need the warning about not being assigned.
 
@@ -28,12 +29,12 @@ public class Main : Node
         _player=GetNode<Player>(PlayerPath);
         _startPosition=GetNode<Position2D>(StartPositionPath);
         _mobSpawnLocation=GetNode<PathFollow2D>(MobSpawnLocationPath);
+        _hud=GetNode<HUD>(HUDPath);
     }  
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         GD.Randomize();
-        NewGame();
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,19 +47,25 @@ public class Main : Node
     {
         _mobTimer.Stop();
         _scoreTimer.Stop();
+        _hud.ShowGameOver();
     }
 
     public void NewGame()
     {
         Score = 0;
         _player.Start(_startPosition.Position);
-    _startTimer.Start();
+        _startTimer.Start();
+        _hud.UpdateScore(Score);
+        _hud.ShowMessage("Get Ready!");
+        GetTree().CallGroup("mobs", "queue_free");
+        
     }
 
     #region ////////////////////-------------------- Timeout Functions --------------------////////////////////
     public void OnScoreTimerTimeout()
     {
         Score++;
+        _hud.UpdateScore(Score);
     }
     public void OnStartTimerTimeout(){
         _mobTimer.Start();
