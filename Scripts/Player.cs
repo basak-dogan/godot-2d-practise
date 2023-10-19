@@ -30,7 +30,7 @@ public class Player : Area2D
     public override void _Ready()
     {
         ScreenSize = GetViewportRect().Size;
-        //Hide();
+        Hide();
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -89,6 +89,13 @@ public class Player : Area2D
             _animatedSprite.FlipV = velocity.y > 0;
         }
     }
+    public void OnPlayerBodyEntered(PhysicsBody2D body)
+{
+    Hide(); // Player disappears after being hit.
+    EmitSignal(nameof(Hit));
+    // Must be deferred as we can't change physics properties on a physics callback.
+    _collisionShape2D.SetDeferred("disabled", true);
+}
     public void Start(Vector2 pos)
 {
     Position = pos;
