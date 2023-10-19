@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Main.cs" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=3]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -17,6 +18,7 @@ StartTimerPath = NodePath("StartTimer")
 PlayerPath = NodePath("Player")
 StartPositionPath = NodePath("StartPosition")
 MobSpawnLocationPath = NodePath("MobPath/MobSpawnLocation")
+HUDPath = NodePath("HUD")
 MobScene = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -39,7 +41,10 @@ curve = SubResource( 1 )
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 position = Vector2( 0, 6 )
 
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+
 [connection signal="Hit" from="Player" to="." method="GameOver"]
 [connection signal="timeout" from="MobTimer" to="." method="OnMobTimerTimeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="OnScoreTimerTimeout"]
 [connection signal="timeout" from="StartTimer" to="." method="OnStartTimerTimeout"]
+[connection signal="StartGame" from="HUD" to="." method="NewGame"]
