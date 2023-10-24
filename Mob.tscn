@@ -27,8 +27,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 71.0
-height = 58.0
+radius = 49.0
+height = 32.0001
 
 [node name="Mob" type="RigidBody2D" groups=["mobs"]]
 collision_mask = 0
@@ -40,9 +40,9 @@ __meta__ = {
 AnimatedSpritePath = NodePath("AnimatedSprite")
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "0_walk"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
